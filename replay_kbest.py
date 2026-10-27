@@ -18,8 +18,8 @@ Semantics (--semantics) must match what the candidate implements:
 
 Examples:
     python replay_kbest.py --selftest
-    python replay_kbest.py corpus/mot17_liftt.npz --k 20 --limit 200
-    python replay_kbest.py corpus/mot17_liftt.npz --candidate tyler_impl:kbest --k 20
+    python replay_kbest.py corpus/mot17_mpntrack.npz --k 20 --limit 200
+    python replay_kbest.py corpus/mot17_mpntrack.npz --candidate tyler_impl:kbest --k 20
 """
 import argparse
 import heapq

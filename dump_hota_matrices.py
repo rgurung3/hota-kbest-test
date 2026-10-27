@@ -17,7 +17,7 @@ Output (two files, same stem):
 
 Usage:
     python dump_hota_matrices.py --trackeval-dir C:/path/TrackEval \
-        --benchmark MOT17 --split train --tracker Lif_T --out corpus/mot17_liftt
+        --benchmark MOT17 --split train --tracker MPNTrack --out corpus/mot17_mpntrack
 """
 import argparse
 import json
