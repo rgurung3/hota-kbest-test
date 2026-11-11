@@ -38,6 +38,12 @@ There are 15,905 matrices from the same 21 sequences. SORT only runs its Hungari
 
 The detections are used as published, with no confidence cut-off. The json keeps each detection's confidence (`det_conf`) and the SORT track ids (`track_ids`). Frame numbers start at 0, like the HOTA set. The sizes are similar to the HOTA set: the larger side has a median of 13 and a max of 60, and about 90% of the entries are zero.
 
+## Looking at the matrices
+
+There is a small website for browsing everything: https://rgurung3.github.io/Murty_Research/hota-viewers/
+
+It has an explainer for one frame, a live viewer that plays SORT's boxes and matrices frame by frame, a viewer for every HOTA matrix, and a box viewer. `make_site_data.py` writes the data files behind those pages from the matrices and MOT17.zip.
+
 ## Running the replay
 
 Needs numpy and scipy. Run these from the repo folder.
