@@ -201,6 +201,7 @@ def main():
     ap.add_argument("--limit", type=int, help="only the first N matrices")
     ap.add_argument("--min-dim", type=int, default=1, help="skip matrices whose smaller side is below this")
     ap.add_argument("--max-dim", type=int, help="skip matrices whose larger side exceeds this")
+    ap.add_argument("--solved-only", action="store_true", help="only matrices marked solved in the .json (SORT corpus: skip frames SORT matched without its solver)")
     ap.add_argument("--selftest", action="store_true", help="validate the reference against brute force and exit")
     args = ap.parse_args()
 
@@ -220,6 +221,8 @@ def main():
     for key, cost, meta in load_corpus(args.corpus):
         n, m = cost.shape
         if min(n, m) < args.min_dim or (args.max_dim and max(n, m) > args.max_dim):
+            continue
+        if args.solved_only and not meta.get("solved", True):
             continue
         if args.limit and ran >= args.limit:
             break
